@@ -2,6 +2,11 @@ import { v } from "convex/values";
 import { query, mutation } from "./_generated/server";
 import { r2 } from "./r2";
 
+// Presigned R2 URLs are generated when a query runs and the result is cached by
+// Convex, so they must stay valid for the whole time a page sits open. Use the
+// component's maximum (7 days) instead of the 900s default to avoid expired URLs.
+const R2_URL_EXPIRES_IN = 60 * 60 * 24 * 7;
+
 export const list = query({
   args: {},
   handler: async (ctx) => {
@@ -20,7 +25,9 @@ export const list = query({
       videos.map(async (video) => {
         let videoUrl: string | null = null;
         if (video.r2Key) {
-          videoUrl = await r2.getUrl(video.r2Key);
+          videoUrl = await r2.getUrl(video.r2Key, {
+            expiresIn: R2_URL_EXPIRES_IN,
+          });
         } else if (video.storageId) {
           videoUrl = await ctx.storage.getUrl(video.storageId);
         }
@@ -55,7 +62,9 @@ export const listByCollection = query({
       videos.map(async (video) => {
         let videoUrl: string | null = null;
         if (video.r2Key) {
-          videoUrl = await r2.getUrl(video.r2Key);
+          videoUrl = await r2.getUrl(video.r2Key, {
+            expiresIn: R2_URL_EXPIRES_IN,
+          });
         } else if (video.storageId) {
           videoUrl = await ctx.storage.getUrl(video.storageId);
         }
@@ -86,7 +95,9 @@ export const getFeatured = query({
 
     let videoUrl: string | null = null;
     if (featured.r2Key) {
-      videoUrl = await r2.getUrl(featured.r2Key);
+      videoUrl = await r2.getUrl(featured.r2Key, {
+        expiresIn: R2_URL_EXPIRES_IN,
+      });
     } else if (featured.storageId) {
       videoUrl = await ctx.storage.getUrl(featured.storageId);
     }

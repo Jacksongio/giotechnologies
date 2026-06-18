@@ -14,6 +14,11 @@ node_modules
 .next/
 .DS_Store
 
+# Agent / skills tooling
+.claude/
+.agents/
+skills-lock.json
+
 # Source video files (too large for git)
 /videos/
 /new_videos/

@@ -15,7 +15,7 @@ export const ResendOTPPasswordReset = Resend({
       from: "The Giordanos <support@giotech.ai>",
       to: [email],
       subject: "Your Giordanos password reset code",
-      text: `Your password reset code is ${token}\n\nEnter this code to set a new password. It expires shortly. If you didn't request this, you can safely ignore this email.\n\n— The Giordanos Family Film Library`,
+      text: `Your password reset code is ${token}\n\nEnter this code to set a new password. It expires shortly. If you didn't request this, you can safely ignore this email.\n\nThe Giordanos Family Film Library`,
       html: resetEmailHtml(token),
     });
 

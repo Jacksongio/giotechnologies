@@ -112,6 +112,12 @@ export default function LoginPage() {
         return;
       }
 
+      if (mode === "signUp" && password !== confirmPassword) {
+        setError("Those passwords don't match. Please re-enter them.");
+        setLoading(false);
+        return;
+      }
+
       await signIn("password", {
         email,
         password,
@@ -136,7 +142,7 @@ export default function LoginPage() {
         );
       } else if (mode === "signUp") {
         setError(
-          "We couldn't create your account. This email may already be registered — try signing in instead, and make sure your password is at least 8 characters.",
+          "We couldn't create your account. This email may already be registered. Try signing in instead, and make sure your password is at least 8 characters.",
         );
       } else if (mode === "forgot") {
         setError(
@@ -172,7 +178,7 @@ export default function LoginPage() {
 
   return (
     <div className="flex min-h-screen">
-      {/* Left panel — cinematic photo collage */}
+      {/* Left panel - cinematic photo collage */}
       <div className="relative hidden w-1/2 overflow-hidden bg-foreground lg:block xl:w-[55%]">
         {/* Background image */}
         <Image
@@ -228,7 +234,7 @@ export default function LoginPage() {
         </div>
       </div>
 
-      {/* Right panel — form */}
+      {/* Right panel - form */}
       <div className="flex w-full flex-col lg:w-1/2 xl:w-[45%]">
         {/* Form area */}
         <div className="flex flex-1 flex-col items-center justify-center px-6 sm:px-12 lg:px-16">
@@ -389,13 +395,15 @@ export default function LoginPage() {
                 </div>
               )}
 
-              {mode === "reset" && (
+              {(mode === "reset" || mode === "signUp") && (
                 <div className="flex flex-col gap-2">
                   <label
                     htmlFor="confirmPassword"
                     className="font-mono text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground"
                   >
-                    Confirm new password
+                    {mode === "reset"
+                      ? "Confirm new password"
+                      : "Confirm password"}
                   </label>
                   <input
                     id="confirmPassword"
@@ -405,7 +413,7 @@ export default function LoginPage() {
                     required
                     minLength={8}
                     className="rounded-2xl border border-border bg-card px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
-                    placeholder="Re-enter your new password"
+                    placeholder="Re-enter your password"
                   />
                 </div>
               )}

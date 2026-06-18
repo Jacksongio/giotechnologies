@@ -22,7 +22,7 @@ export function Collections() {
             </h2>
           </div>
           <p className="max-w-xs text-pretty text-sm leading-relaxed text-muted-foreground">
-            Every reel filed by feeling, not by date &mdash; so finding the right
+            Every reel filed by feeling, not by date, so finding the right
             memory feels like flipping through an old photo album.
           </p>
         </div>

@@ -26,14 +26,14 @@ export function Hero() {
         <div className="mx-auto max-w-7xl px-6 pb-10 pt-16 md:px-10 md:pb-16 md:pt-24">
           <div className="flex flex-col items-center text-center">
             <p className="font-mono text-[0.7rem] uppercase tracking-[0.4em] text-primary">
-              Est. 1994 &middot; Kept for keeps
+              Est. 1999 &middot; Kept for keeps
             </p>
             <h1 className="mt-6 max-w-5xl text-balance font-serif text-5xl leading-[0.95] tracking-tight text-foreground sm:text-6xl md:text-8xl">
               The little moments,
               <span className="block italic text-primary">gathered together.</span>
             </h1>
             <p className="mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-              A private home for the Giordano family videos &mdash; birthdays, beach
+              A private home for the Giordano family videos: birthdays, beach
               days, holidays, and all the in-between days worth pressing record for.
             </p>
           </div>
@@ -50,14 +50,14 @@ export function Hero() {
         {/* Editorial intro */}
         <div className="flex flex-col items-center text-center">
           <p className="font-mono text-[0.7rem] uppercase tracking-[0.4em] text-primary">
-            Est. 1994 &middot; Kept for keeps
+            Est. 1999 &middot; Kept for keeps
           </p>
           <h1 className="mt-6 max-w-5xl text-balance font-serif text-5xl leading-[0.95] tracking-tight text-foreground sm:text-6xl md:text-8xl">
             The little moments,
             <span className="block italic text-primary">gathered together.</span>
           </h1>
           <p className="mt-7 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            A private home for the Giordano family videos &mdash; birthdays, beach
+            A private home for the Giordano family videos: birthdays, beach
             days, holidays, and all the in-between days worth pressing record for.
           </p>
         </div>

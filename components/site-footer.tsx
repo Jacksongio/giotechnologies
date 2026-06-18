@@ -9,7 +9,7 @@ export function SiteFooter() {
             </p>
             <p className="mt-5 max-w-md text-pretty font-serif text-2xl leading-snug md:text-3xl">
               A private little corner of the internet where our family keeps its
-              home videos safe &mdash; for the kids, the grandkids, and every rainy
+              home videos safe, for the kids, the grandkids, and every rainy
               afternoon worth a rewatch.
             </p>
           </div>

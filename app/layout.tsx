@@ -16,11 +16,11 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   title: {
-    default: 'The Giordanos — Family Film Library',
+    default: 'The Giordanos: Family Film Library',
     template: '%s · The Giordanos',
   },
   description:
-    'A private home for the Giordano family videos — birthdays, holidays, road trips, and all the little moments worth keeping.',
+    'A private home for the Giordano family videos: birthdays, holidays, road trips, and all the little moments worth keeping.',
   applicationName: 'The Giordanos Family Film Library',
   keywords: [
     'Giordano family',
@@ -37,9 +37,9 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
   openGraph: {
-    title: 'The Giordanos — Family Film Library',
+    title: 'The Giordanos: Family Film Library',
     description:
-      'A private home for the Giordano family videos — birthdays, holidays, road trips, and all the little moments worth keeping.',
+      'A private home for the Giordano family videos: birthdays, holidays, road trips, and all the little moments worth keeping.',
     siteName: 'The Giordanos Family Film Library',
     type: 'website',
   },
