@@ -16,7 +16,7 @@ export function AuthGuard({ children }: { children: ReactNode }) {
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
+      <div className="flex min-h-dvh items-center justify-center bg-background">
         <div className="text-center">
           <h1 className="font-serif text-3xl text-foreground">The Giordanos</h1>
           <p className="mt-2 font-mono text-[0.6rem] uppercase tracking-[0.35em] text-muted-foreground">

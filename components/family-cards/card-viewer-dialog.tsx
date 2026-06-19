@@ -109,8 +109,8 @@ export function CardViewerDialog({
                     animation: stage >= 1 ? "card-seal-break 500ms ease-out forwards" : "none",
                   }}
                 >
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-red-800 shadow-lg ring-2 ring-red-900/30">
-                    <span className="font-serif text-sm font-bold tracking-wide text-red-200">G</span>
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-800 shadow-lg ring-2 ring-red-900/30 sm:h-16 sm:w-16">
+                    <span className="font-serif text-xs font-bold tracking-wide text-red-200 sm:text-sm">G</span>
                   </div>
                 </div>
               </div>
@@ -129,7 +129,7 @@ export function CardViewerDialog({
                   className={`bg-gradient-to-b ${meta.gradientClasses} rounded-t-2xl`}
                   style={{
                     clipPath: "polygon(0 0, 100% 0, 50% 70%)",
-                    height: "120px",
+                    height: "clamp(80px, 20vw, 120px)",
                     backfaceVisibility: "hidden",
                     filter: "brightness(0.85)",
                   }}
@@ -153,7 +153,7 @@ export function CardViewerDialog({
             <div className="overflow-hidden rounded-2xl bg-popover shadow-2xl ring-1 ring-foreground/10">
               {/* Gradient header */}
               <div
-                className={`bg-gradient-to-br ${meta.gradientClasses} relative overflow-hidden px-6 pb-10 pt-12`}
+                className={`bg-gradient-to-br ${meta.gradientClasses} relative overflow-hidden px-5 pb-8 pt-10 sm:px-6 sm:pb-10 sm:pt-12`}
               >
                 {/* Shimmer sweep */}
                 {stage >= 4 && (
@@ -170,7 +170,7 @@ export function CardViewerDialog({
                 {/* Emoji */}
                 <div className="flex flex-col items-center">
                   <span
-                    className="text-7xl drop-shadow-lg"
+                    className="text-5xl drop-shadow-lg sm:text-7xl"
                     style={{
                       animation:
                         stage >= 4
@@ -185,7 +185,7 @@ export function CardViewerDialog({
 
                   {/* Greeting */}
                   <h2
-                    className="mt-5 text-center font-serif text-3xl leading-tight text-white drop-shadow-md"
+                    className="mt-4 text-center font-serif text-2xl leading-tight text-white drop-shadow-md sm:mt-5 sm:text-3xl"
                     style={{
                       animation:
                         stage >= 4
@@ -207,7 +207,7 @@ export function CardViewerDialog({
               </div>
 
               {/* Card body */}
-              <div className="flex flex-col items-center px-8 pb-10 pt-4">
+              <div className="flex flex-col items-center px-5 pb-8 pt-3 sm:px-8 sm:pb-10 sm:pt-4">
                 {/* Message */}
                 <div
                   className="transition-all duration-700 ease-out"
@@ -217,14 +217,14 @@ export function CardViewerDialog({
                     filter: stage >= 5 ? "blur(0)" : "blur(4px)",
                   }}
                 >
-                  <p className="max-w-xs text-center font-serif text-lg italic leading-relaxed text-foreground">
+                  <p className="max-w-xs text-center font-serif text-base italic leading-relaxed text-foreground sm:text-lg">
                     &ldquo;{card.message}&rdquo;
                   </p>
                 </div>
 
                 {/* Divider */}
                 <div
-                  className="mt-6 h-px bg-border transition-all duration-700 ease-out"
+                  className="mt-4 h-px bg-border transition-all duration-700 ease-out sm:mt-6"
                   style={{
                     width: stage >= 5 ? "48px" : "0px",
                     transitionDelay: "200ms",
@@ -233,24 +233,24 @@ export function CardViewerDialog({
 
                 {/* Attribution */}
                 <div
-                  className="mt-5 flex flex-col items-center gap-1 transition-all duration-600 ease-out"
+                  className="mt-4 flex flex-col items-center gap-1 transition-all duration-600 ease-out sm:mt-5"
                   style={{
                     opacity: stage >= 5 ? 1 : 0,
                     transform: stage >= 5 ? "translateY(0)" : "translateY(8px)",
                     transitionDelay: "400ms",
                   }}
                 >
-                  <p className="font-mono text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground">
+                  <p className="font-mono text-[0.6rem] uppercase tracking-[0.25em] text-muted-foreground sm:text-[0.65rem]">
                     {mode === "received" ? "With love, from" : "Sent to"}
                   </p>
-                  <p className="font-serif text-base text-foreground">
+                  <p className="font-serif text-sm text-foreground sm:text-base">
                     {personLabel}
                   </p>
                 </div>
 
                 {/* Date */}
                 <p
-                  className="mt-4 font-mono text-[0.6rem] uppercase tracking-widest text-muted-foreground/50 transition-all duration-500"
+                  className="mt-3 font-mono text-[0.55rem] uppercase tracking-widest text-muted-foreground/50 transition-all duration-500 sm:mt-4 sm:text-[0.6rem]"
                   style={{
                     opacity: stage >= 5 ? 1 : 0,
                     transitionDelay: "600ms",

@@ -183,7 +183,7 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-dvh">
       {/* Left panel - cinematic photo collage */}
       <div className="relative hidden w-1/2 overflow-hidden bg-foreground lg:block xl:w-[55%]">
         {/* Background image */}
@@ -279,7 +279,7 @@ export default function LoginPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     required
-                    className="rounded-2xl border border-border bg-card px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
+                    className="rounded-2xl border border-border bg-card px-5 py-3.5 text-base text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10 sm:text-sm"
                     placeholder="Your name"
                   />
                 </div>
@@ -298,7 +298,7 @@ export default function LoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="rounded-2xl border border-border bg-card px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
+                  className="rounded-2xl border border-border bg-card px-5 py-3.5 text-base text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10 sm:text-sm"
                   placeholder="you@family.com"
                 />
               </div>
@@ -418,7 +418,7 @@ export default function LoginPage() {
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     required
                     minLength={8}
-                    className="rounded-2xl border border-border bg-card px-5 py-3.5 text-sm text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10"
+                    className="rounded-2xl border border-border bg-card px-5 py-3.5 text-base text-foreground placeholder:text-muted-foreground/50 outline-none transition-all focus:border-primary focus:ring-2 focus:ring-primary/10 sm:text-sm"
                     placeholder="Re-enter your password"
                   />
                 </div>

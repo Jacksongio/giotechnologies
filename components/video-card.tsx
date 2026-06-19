@@ -56,7 +56,7 @@ export function VideoCard({ video }: { video: FamilyVideo }) {
       </button>
 
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogContent className="max-w-3xl overflow-hidden p-0">
+        <DialogContent className="max-w-[calc(100%-0.5rem)] overflow-hidden p-0 sm:max-w-3xl">
           {video.videoUrl ? (
             <video
               src={video.videoUrl}
@@ -74,24 +74,24 @@ export function VideoCard({ video }: { video: FamilyVideo }) {
                 className="object-cover opacity-80"
               />
               <div className="absolute inset-0 flex items-center justify-center bg-foreground/30">
-                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-background/90 text-primary shadow-lg">
-                  <Play className="h-6 w-6 translate-x-0.5 fill-current" />
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-background/90 text-primary shadow-lg sm:h-16 sm:w-16">
+                  <Play className="h-5 w-5 translate-x-0.5 fill-current sm:h-6 sm:w-6" />
                 </span>
               </div>
             </div>
           )}
-          <div className="p-6">
-            <div className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-primary">
+          <div className="p-4 sm:p-6">
+            <div className="flex items-center gap-2 text-[0.65rem] font-medium uppercase tracking-wider text-primary sm:text-xs">
               <span>{video.collection}</span>
               <span className="text-muted-foreground">·</span>
               <span className="text-muted-foreground">
                 {video.year} · {video.duration}
               </span>
             </div>
-            <DialogTitle className="mt-2 font-serif text-2xl text-foreground">
+            <DialogTitle className="mt-1.5 font-serif text-lg text-foreground sm:mt-2 sm:text-2xl">
               {video.title}
             </DialogTitle>
-            <DialogDescription className="mt-2 text-pretty leading-relaxed text-muted-foreground">
+            <DialogDescription className="mt-1.5 text-pretty text-xs leading-relaxed text-muted-foreground sm:mt-2 sm:text-sm">
               {video.description}
             </DialogDescription>
           </div>

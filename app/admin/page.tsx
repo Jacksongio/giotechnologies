@@ -97,7 +97,7 @@ function AdminContent() {
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <SiteHeader />
 
       <div className="mx-auto max-w-4xl px-6 py-10 md:px-10">
@@ -117,7 +117,7 @@ function AdminContent() {
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 required
-                className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                 placeholder="A Whole Day at the Shore"
               />
             </div>
@@ -131,7 +131,7 @@ function AdminContent() {
                 onChange={(e) => setDescription(e.target.value)}
                 required
                 rows={3}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                 placeholder="Sun, sandcastles, and the kids racing the tide."
               />
             </div>
@@ -144,7 +144,7 @@ function AdminContent() {
                 <select
                   value={collection}
                   onChange={(e) => setCollection(e.target.value)}
-                  className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                  className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                 >
                   {collections.map((c) => (
                     <option key={c} value={c}>
@@ -163,7 +163,7 @@ function AdminContent() {
                   value={year}
                   onChange={(e) => setYear(e.target.value)}
                   required
-                  className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                  className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                   placeholder="2024"
                 />
               </div>
@@ -179,7 +179,7 @@ function AdminContent() {
                   value={duration}
                   onChange={(e) => setDuration(e.target.value)}
                   required
-                  className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                  className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                   placeholder="12:04"
                 />
               </div>

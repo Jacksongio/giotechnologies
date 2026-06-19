@@ -70,7 +70,7 @@ function ProfileSection() {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+            className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
             placeholder="Your name"
           />
         </div>
@@ -83,7 +83,7 @@ function ProfileSection() {
             type="email"
             value={profile.email ?? ""}
             disabled
-            className="rounded-xl border border-border bg-muted/50 px-4 py-3 text-sm text-muted-foreground"
+            className="rounded-xl border border-border bg-muted/50 px-4 py-3 text-base text-muted-foreground sm:text-sm"
           />
           <p className="text-xs text-muted-foreground/60">
             Email cannot be changed
@@ -98,7 +98,7 @@ function ProfileSection() {
             type="tel"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+            className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
             placeholder="(555) 123-4567"
           />
         </div>
@@ -255,7 +255,7 @@ function PasswordSection() {
                   value={currentPassword}
                   onChange={(e) => setCurrentPassword(e.target.value)}
                   required
-                  className="w-full rounded-xl border border-border bg-card px-4 py-3 pr-11 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                  className="w-full rounded-xl border border-border bg-card px-4 py-3 pr-11 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                 />
                 <button
                   type="button"
@@ -281,7 +281,7 @@ function PasswordSection() {
                 onChange={(e) => setNewPassword(e.target.value)}
                 required
                 minLength={8}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                 placeholder="At least 8 characters"
               />
             </div>
@@ -296,7 +296,7 @@ function PasswordSection() {
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
                 minLength={8}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-primary"
+                className="rounded-xl border border-border bg-card px-4 py-3 text-base text-foreground outline-none transition-colors focus:border-primary sm:text-sm"
                 placeholder="Re-enter new password"
               />
             </div>
@@ -374,7 +374,7 @@ function SignOutSection() {
 
 function AccountContent() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-dvh bg-background">
       <SiteHeader />
 
       <div className="mx-auto max-w-2xl space-y-12 px-6 py-10 md:px-10">

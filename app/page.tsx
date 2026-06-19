@@ -10,7 +10,7 @@ import { AuthGuard } from "@/components/auth-guard"
 export default function Page() {
   return (
     <AuthGuard>
-      <main id="top" className="min-h-screen bg-background">
+      <main id="top" className="min-h-dvh bg-background">
         <SiteHeader />
         <Hero />
         <Collections />

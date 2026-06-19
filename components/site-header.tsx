@@ -1,7 +1,7 @@
 "use client"
 
 import { useAuthActions } from "@convex-dev/auth/react"
-import { LogOut, Settings, Heart, User } from "lucide-react"
+import { LogOut, Settings, Heart, User, Home, BookOpen, Upload } from "lucide-react"
 import Link from "next/link"
 import {
   DropdownMenu,
@@ -57,6 +57,21 @@ export function SiteHeader() {
               <User className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" sideOffset={8}>
+              <div className="md:hidden">
+                <DropdownMenuItem render={<Link href="/" />}>
+                  <Home className="h-4 w-4" />
+                  Home
+                </DropdownMenuItem>
+                <DropdownMenuItem render={<Link href="/#library" />}>
+                  <BookOpen className="h-4 w-4" />
+                  Library
+                </DropdownMenuItem>
+                <DropdownMenuItem render={<Link href="/admin" />}>
+                  <Upload className="h-4 w-4" />
+                  Upload
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+              </div>
               <DropdownMenuItem render={<Link href="/account" />}>
                 <Settings className="h-4 w-4" />
                 Account
