@@ -100,8 +100,8 @@ function AdminContent() {
     <div className="min-h-dvh bg-background">
       <SiteHeader />
 
-      <div className="mx-auto max-w-4xl px-6 py-10 md:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1fr,1.2fr]">
+      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10 md:px-10">
+        <div className="grid gap-10 sm:gap-12 lg:grid-cols-[1fr,1.2fr]">
           {/* Upload form */}
           <form onSubmit={handleSubmit} className="flex flex-col gap-5">
             <h2 className="font-mono text-[0.7rem] uppercase tracking-[0.35em] text-primary">
@@ -136,7 +136,7 @@ function AdminContent() {
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="flex flex-col gap-1.5">
                 <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
                   Collection
@@ -169,7 +169,7 @@ function AdminContent() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="flex flex-col gap-1.5">
                 <label className="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-muted-foreground">
                   Duration
@@ -193,7 +193,7 @@ function AdminContent() {
                     type="checkbox"
                     checked={featured}
                     onChange={(e) => setFeatured(e.target.checked)}
-                    className="h-4 w-4 rounded border-border accent-primary"
+                    className="h-5 w-5 rounded border-border accent-primary sm:h-4 sm:w-4"
                   />
                   Hero spotlight
                 </label>
@@ -208,7 +208,7 @@ function AdminContent() {
                 ref={videoFileRef}
                 type="file"
                 accept="video/*"
-                className="text-sm text-muted-foreground file:mr-3 file:rounded-full file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-medium file:text-primary-foreground"
+                className="text-sm text-muted-foreground file:mr-3 file:rounded-full file:border-0 file:bg-primary file:px-4 file:py-2.5 file:text-sm file:font-medium file:text-primary-foreground"
               />
             </div>
 
@@ -220,7 +220,7 @@ function AdminContent() {
                 ref={thumbnailFileRef}
                 type="file"
                 accept="image/*"
-                className="text-sm text-muted-foreground file:mr-3 file:rounded-full file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-medium file:text-primary-foreground"
+                className="text-sm text-muted-foreground file:mr-3 file:rounded-full file:border-0 file:bg-primary file:px-4 file:py-2.5 file:text-sm file:font-medium file:text-primary-foreground"
               />
             </div>
 
@@ -231,7 +231,7 @@ function AdminContent() {
             <button
               type="submit"
               disabled={uploading}
-              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50"
+              className="mt-2 flex items-center justify-center gap-2 rounded-full bg-primary px-5 py-3.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-50 sm:py-3"
             >
               <Upload className="h-4 w-4" />
               {uploading ? "Uploading..." : "Add Video"}
@@ -247,7 +247,7 @@ function AdminContent() {
               {videos?.map((video) => (
                 <div
                   key={video._id}
-                  className="flex items-center gap-4 rounded-xl border border-border bg-card p-4"
+                  className="flex items-center gap-3 rounded-xl border border-border bg-card p-3.5 sm:gap-4 sm:p-4"
                 >
                   <Film className="h-5 w-5 shrink-0 text-primary" />
                   <div className="min-w-0 flex-1">
