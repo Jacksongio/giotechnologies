@@ -9,7 +9,9 @@
  */
 
 import type * as ResendOTPPasswordReset from "../ResendOTPPasswordReset.js";
+import type * as account from "../account.js";
 import type * as auth from "../auth.js";
+import type * as familyCards from "../familyCards.js";
 import type * as http from "../http.js";
 import type * as r2 from "../r2.js";
 import type * as seed from "../seed.js";
@@ -24,7 +26,9 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   ResendOTPPasswordReset: typeof ResendOTPPasswordReset;
+  account: typeof account;
   auth: typeof auth;
+  familyCards: typeof familyCards;
   http: typeof http;
   r2: typeof r2;
   seed: typeof seed;

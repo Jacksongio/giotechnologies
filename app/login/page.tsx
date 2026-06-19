@@ -1,6 +1,7 @@
 "use client";
 
 import { useAuthActions } from "@convex-dev/auth/react";
+import { useConvexAuth } from "convex/react";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
@@ -15,6 +16,7 @@ const giordanoPhotos = [giordano1, giordano2, giordano3, giordano4, giordano5];
 
 export default function LoginPage() {
   const { signIn } = useAuthActions();
+  const { isAuthenticated } = useConvexAuth();
   const router = useRouter();
   const [mode, setMode] = useState<"signIn" | "signUp" | "forgot" | "reset">(
     "signIn",
@@ -31,6 +33,12 @@ export default function LoginPage() {
   const [resending, setResending] = useState(false);
   const [resendCooldown, setResendCooldown] = useState(0);
   const codeInputsRef = useRef<Array<HTMLInputElement | null>>([]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/");
+    }
+  }, [isAuthenticated, router]);
 
   useEffect(() => {
     if (resendCooldown <= 0) return;
@@ -108,7 +116,6 @@ export default function LoginPage() {
           newPassword: password,
           flow: "reset-verification",
         });
-        router.push("/");
         return;
       }
 
@@ -124,7 +131,6 @@ export default function LoginPage() {
         name: mode === "signUp" ? name : undefined,
         flow: mode,
       });
-      router.push("/");
     } catch (err) {
       const message = err instanceof Error ? err.message.toLowerCase() : "";
       const isNetworkError =

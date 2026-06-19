@@ -5,6 +5,17 @@ import { v } from "convex/values";
 export default defineSchema({
   ...authTables,
 
+  familyCards: defineTable({
+    senderId: v.id("users"),
+    recipientId: v.id("users"),
+    occasion: v.string(),
+    message: v.string(),
+    isRead: v.boolean(),
+  })
+    .index("by_recipientId", ["recipientId"])
+    .index("by_senderId", ["senderId"])
+    .index("by_recipientId_and_isRead", ["recipientId", "isRead"]),
+
   videos: defineTable({
     title: v.string(),
     description: v.string(),

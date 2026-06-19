@@ -4,14 +4,13 @@ import { useState, useRef } from "react";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { AuthGuard } from "@/components/auth-guard";
-import Link from "next/link";
-import { ArrowLeft, Upload, Trash2, Film } from "lucide-react";
+import { SiteHeader } from "@/components/site-header";
+import { Upload, Film } from "lucide-react";
 import type { Id } from "@/convex/_generated/dataModel";
 
 function AdminContent() {
   const videos = useQuery(api.videos.list);
   const createVideo = useMutation(api.videos.create);
-  const removeVideo = useMutation(api.videos.remove);
   const generateUploadUrl = useMutation(api.videos.generateUploadUrl);
 
   const [title, setTitle] = useState("");
@@ -99,23 +98,7 @@ function AdminContent() {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border/50 bg-background/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-4xl items-center gap-4 px-6 py-4 md:px-10">
-          <Link
-            href="/"
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <ArrowLeft className="h-4 w-4" />
-          </Link>
-          <div>
-            <h1 className="font-serif text-xl text-foreground">Upload Videos</h1>
-            <p className="font-mono text-[0.6rem] uppercase tracking-[0.35em] text-muted-foreground">
-              Add to the family library
-            </p>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       <div className="mx-auto max-w-4xl px-6 py-10 md:px-10">
         <div className="grid gap-12 lg:grid-cols-[1fr,1.2fr]">
@@ -276,14 +259,6 @@ function AdminContent() {
                       {video.duration}
                     </p>
                   </div>
-                  <button
-                    type="button"
-                    onClick={() => void removeVideo({ id: video._id })}
-                    className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
-                    title="Delete video"
-                  >
-                    <Trash2 className="h-4 w-4" />
-                  </button>
                 </div>
               ))}
               {videos?.length === 0 && (
